@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_question_mark, prefer_void_to_null
+
 class SearchModel {
   bool? status;
   Null? message;

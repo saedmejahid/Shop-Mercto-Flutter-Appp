@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sallla_app/layout/shop_app/cubit/states.dart';
@@ -13,7 +15,8 @@ import 'package:sallla_app/modules/shop%20app/settings/settings_screen.dart';
 import 'package:sallla_app/shared/components/constants.dart';
 import 'package:sallla_app/shared/network/end_points.dart';
 import 'package:sallla_app/shared/network/remote/dio_helper.dart';
-class ShopCubit extends Cubit<ShopAppStates>{
+class ShopCubit extends Cubit<ShopAppStates>
+{
   ShopCubit():super (ShopInitState());
   static ShopCubit get (context) => BlocProvider.of(context);
   int currentIndex =0;

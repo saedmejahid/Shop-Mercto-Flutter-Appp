@@ -6,11 +6,13 @@ import 'package:sallla_app/models/models_shop_app/categories_model.dart';
 import 'package:sallla_app/shared/components/components.dart';
 import 'package:sallla_app/shared/styles/colors.dart';
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatelessWidget
+{
   const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return BlocConsumer<ShopCubit, ShopAppStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -27,13 +29,14 @@ class CategoriesScreen extends StatelessWidget {
   Widget buildCatItem(DataModel model) => Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(
-          children: [
+          children:
+          [
             Image(
               image: NetworkImage(
                 model.image!,
               ),
-              width: 100,
-              height: 100,
+              width: 90,
+              height: 90,
               fit: BoxFit.cover,
             ),
             const SizedBox(
@@ -44,7 +47,7 @@ class CategoriesScreen extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: defaultColor,
-                fontSize: 20.0,
+                fontSize: 18.0,
               ),
             ),
             const Spacer(),

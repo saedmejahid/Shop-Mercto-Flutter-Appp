@@ -37,6 +37,7 @@ class ShopLoginScreen extends StatelessWidget {
                 navigateAndFinsh(context,const ShopLayout());
               }).catchError((error)
               {
+                // ignore: avoid_print
                 print(error.toString());
               });
               showToast(state: ToastStates.success, text: state.loginModel.message!);

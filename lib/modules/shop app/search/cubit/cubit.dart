@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sallla_app/models/models_shop_app/search_model.dart';
 import 'package:sallla_app/modules/shop%20app/search/cubit/states.dart';

@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sallla_app/bloc_observer.dart';
@@ -11,14 +12,19 @@ import 'package:sallla_app/shared/cubit/states.dart';
 import 'package:sallla_app/shared/network/local/cache_helper.dart';
 import 'package:sallla_app/shared/network/remote/dio_helper.dart';
 import 'package:sallla_app/shared/styles/themes.dart';
-void main() async {
+void main() async
+{
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();
   Widget widget;
-  bool? isDark = CacheHelper.getData(key: 'isDark');
-  bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
+  bool? isDark = CacheHelper.getData(
+      key: 'isDark'
+  );
+  bool? onBoarding = CacheHelper.getData(
+      key: 'onBoarding'
+  );
   token  = CacheHelper.getData(key: 'token');
   print(token);
   if (onBoarding != null)
@@ -39,14 +45,17 @@ void main() async {
 }
 
 // ignore: must_be_immutable
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget
+{
   MyApp({super.key, this.isDark, this.startWidget});
   bool? isDark;
   Widget? startWidget;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return MultiBlocProvider(
-      providers: [
+      providers:
+      [
         BlocProvider(
           create: (BuildContext context) => AppCubit()..changeAppMode(fromShared: isDark),
         ),
@@ -58,14 +67,13 @@ class MyApp extends StatelessWidget {
               ..getUserData(),
         ),
       ],
-      child: BlocConsumer<AppCubit, AppStates>(
-        listener: (context, state) {},
-        builder: (context, state) {
+      child: BlocBuilder<AppCubit, AppStates>(
+        builder: (context, state)
+        {
           return MaterialApp(
             theme: lightTheme,
             darkTheme: darkTheme,
-            themeMode:
-                AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
+            themeMode: AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
             debugShowCheckedModeBanner: false,
             home: startWidget,
           );

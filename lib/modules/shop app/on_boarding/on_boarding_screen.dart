@@ -4,12 +4,11 @@ import 'package:sallla_app/shared/components/components.dart';
 import 'package:sallla_app/shared/network/local/cache_helper.dart';
 import 'package:sallla_app/shared/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-class BoradingModel {
+class BoradingModel
+{
   final String image;
   final String title;
   final String body;
-
   BoradingModel({
     required this.image,
     required this.title,
@@ -17,26 +16,32 @@ class BoradingModel {
   });
 }
 
-class OnBoardingScreen extends StatefulWidget {
+class OnBoardingScreen extends StatefulWidget
+{
   const OnBoardingScreen({Key? key}) : super(key: key);
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnBoardingScreenState extends State<OnBoardingScreen>
+{
   var bordController = PageController();
-  void supMit() {
+  void supMit()
+  {
     CacheHelper.saveData(
       key: 'onBoarding',
       value: true,
-    ).then((value) {
-      if (value) {
+    ).then((value)
+    {
+      if (value)
+      {
         navigateAndFinsh(context, const ShopLoginScreen());
       }
     });
   }
 
-  List<BoradingModel> borading = [
+  List<BoradingModel> borading =
+  [
     BoradingModel(
       image: 'assets/images/cart_1.jpeg',
       title: 'Mercato Shop Hot Offers',
@@ -55,10 +60,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   ];
   bool isLast = false;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
-        actions: [
+        actions:
+        [
           TextButton(
             onPressed: supMit,
             child: const Text(
@@ -113,10 +120,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 const Spacer(),
                 FloatingActionButton(
                   backgroundColor: defaultColor,
-                  onPressed: () {
-                    if (isLast) {
+                  onPressed: ()
+                  {
+                    if (isLast)
+                    {
                       supMit();
-                    } else {
+                    } else
+                    {
                       bordController.nextPage(
                         duration: const Duration(
                           milliseconds: 750,

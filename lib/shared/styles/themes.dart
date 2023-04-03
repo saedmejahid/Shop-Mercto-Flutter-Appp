@@ -58,7 +58,7 @@ ThemeData  lightTheme  = ThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
-    elevation: 20.0,
+    elevation: 0.0,
     backgroundColor: Colors.white,
   ),
   textTheme: const TextTheme(
@@ -67,6 +67,5 @@ ThemeData  lightTheme  = ThemeData(
         fontWeight: FontWeight.bold,
         color: Colors.black,
       )),
-    fontFamily: 'Jannah'
-
+    fontFamily: 'Jannah',
 );

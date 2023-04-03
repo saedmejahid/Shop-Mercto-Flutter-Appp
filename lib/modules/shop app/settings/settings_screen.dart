@@ -5,6 +5,7 @@ import 'package:sallla_app/layout/shop_app/cubit/cubit.dart';
 import 'package:sallla_app/layout/shop_app/cubit/states.dart';
 import 'package:sallla_app/shared/components/components.dart';
 import 'package:sallla_app/shared/components/constants.dart';
+// ignore: must_be_immutable
 class SettingsScreen extends StatelessWidget {
    SettingsScreen({Key? key}) : super(key: key);
    var formKey = GlobalKey<FormState>();

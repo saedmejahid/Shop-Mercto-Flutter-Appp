@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sallla_app/layout/shop_app/cubit/cubit.dart';
 import 'package:sallla_app/shared/styles/colors.dart';
-
 Widget defaulButton({
   double width = double.infinity,
   Color backround = defaultColor,
@@ -167,7 +166,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
 
 Widget myDivider() => Container(
       width: double.infinity,
-      height: 1,
+      height: 0.5 ,
       color: defaultColor,
     );
 

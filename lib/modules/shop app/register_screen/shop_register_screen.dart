@@ -1,15 +1,17 @@
+// ignore_for_file: avoid_print, must_be_immutable
+
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sallla_app/layout/shop_app/shop_layout.dart';
 import 'package:sallla_app/modules/shop%20app/register_screen/cubit/cubit.dart';
 import 'package:sallla_app/modules/shop%20app/register_screen/cubit/register_states.dart';
-import 'package:sallla_app/modules/shop%20app/settings/settings_screen.dart';
 import 'package:sallla_app/shared/components/components.dart';
 import 'package:sallla_app/shared/components/constants.dart';
 import 'package:sallla_app/shared/network/local/cache_helper.dart';
 import 'package:sallla_app/shared/styles/colors.dart';
-class ShopRegisterScreen extends StatelessWidget {
+class ShopRegisterScreen extends StatelessWidget
+{
   var formKey = GlobalKey<FormState>();
   var registerNameShopController = TextEditingController();
   var registerEmailShopController = TextEditingController();

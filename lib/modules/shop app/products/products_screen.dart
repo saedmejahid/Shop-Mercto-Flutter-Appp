@@ -8,14 +8,15 @@ import 'package:sallla_app/models/models_shop_app/categories_model.dart';
 import 'package:sallla_app/models/models_shop_app/home_model.dart';
 import 'package:sallla_app/shared/components/components.dart';
 import 'package:sallla_app/shared/styles/colors.dart';
-
-class ProductsScreen extends StatelessWidget {
+class ProductsScreen extends StatelessWidget
+{
   const ProductsScreen({Key? key}) : super(key: key);
-
   @override
-  Widget build(BuildContext context) {
-    return BlocConsumer<ShopCubit, ShopAppStates>(
-      listener: (context, state) {
+  Widget build(BuildContext context)
+  {
+    return BlocConsumer<ShopCubit,ShopAppStates>(
+      listener: (context, state)
+      {
         if(state is ShopSuccessChangeFavState)
         {
           if(state.model.status == true)
@@ -27,7 +28,8 @@ class ProductsScreen extends StatelessWidget {
           }
         }
       },
-      builder: (context, state) {
+      builder: (context,state)
+      {
         return ConditionalBuilder(
           // ignore: unnecessary_null_comparison
           condition: ShopCubit.get(context).homeModel != null && ShopCubit.get(context).categoryModel != null,
@@ -41,7 +43,6 @@ class ProductsScreen extends StatelessWidget {
       },
     );
   }
-
   Widget productsBuilder(HomeModel model, CategoriesModel categoryModel,context) => SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -85,7 +86,8 @@ class ProductsScreen extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children:
+                  [
                     const Text(
                       'Categories',
                       style: TextStyle(
@@ -132,7 +134,7 @@ class ProductsScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 1.0,
                     crossAxisSpacing: 1.0,
-                    childAspectRatio: 1 / 1.6,
+                    childAspectRatio: 1 / 1.7,
                     children: List.generate(
                       model.data.products.length,
                       (index) => buildGridProduct(model.data.products[index],context),
@@ -195,7 +197,7 @@ class ProductsScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                  )
+                  ),
               ],
             ),
             Padding(
